@@ -1,4 +1,19 @@
-.header-logo {
-    width: 10px;
-    height: 10px;
+.header-logo img{
+    width: 60px;
+    height: 60px;
+}
+
+.header-group {
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .6rem 1rem;
+    box-shadow: rgb(0, 0, 0, .15) 1px 1px 10px 0px;
+}
+
+.header-group .header-buttons-group {
+    display: flex;
+    column-gap: 2rem;
+    
 }
