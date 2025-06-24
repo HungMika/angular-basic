@@ -5,6 +5,11 @@
     <div>{{ title.name }}</div>
     <div>{{title.version + 1}}</div>
     <div><b>{{title.description}}</b></div>
+
+    <br/>
+    <button [disabled]="isDisable">Click here</button>
+    <br/>
+    <img src="assets/images/home.png" alt="logo {{ ImageContent }}" width="20px" height="20px">
   </div>
 </main>
 

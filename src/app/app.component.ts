@@ -9,9 +9,16 @@ import { HeaderLayoutComponent } from './header-layout/header-layout.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  //example of a text title object
   title = {
     name: 'Angular App',
     version: '1.0.0',
     description: 'A simple Angular application'
   };
+
+  // example of a boolean flag
+  isDisable = true;
+
+  // example of a atributes
+  ImageContent = "test image";
 }
