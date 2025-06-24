@@ -9,5 +9,9 @@ import { HeaderLayoutComponent } from './header-layout/header-layout.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ng-basic';
+  title = {
+    name: 'Angular App',
+    version: '1.0.0',
+    description: 'A simple Angular application'
+  };
 }
