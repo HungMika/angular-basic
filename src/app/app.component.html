@@ -1,15 +1,22 @@
-
 <main class="main">
   <div class="container">
-    <header-layout/>
+    <header-layout />
     <div>{{ title.name }}</div>
-    <div>{{title.version + 1}}</div>
-    <div><b>{{title.description}}</b></div>
+    <div>{{ title.version + 1 }}</div>
+    <div>
+      <b>{{ title.description }}</b>
+    </div>
 
-    <br/>
+    <br />
     <button [disabled]="isDisable">Click here</button>
-    <br/>
-    <img src="assets/images/home.png" alt="logo {{ ImageContent }}" width="20px" height="20px">
+    <br />
+    <img src="assets/images/home.png" alt="logo {{ ImageContent }}" width="20px" height="20px" />
+    <br />
+    <div>{{ message }}</div>
+    <button (click)="onButtonClick()">{{ btnName }}</button>
+    <br />
+    <input type="text" [(ngModel)]="bindValue" />
+    <div>{{ bindValue }}</div>
   </div>
 </main>
 
