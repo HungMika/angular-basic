@@ -17,24 +17,24 @@ export class AppComponent {
     description: 'A simple Angular application',
   };
 
-  // example of a boolean flag
-  isDisable = true;
+  // // example of a boolean flag
+  // isDisable = true;
 
-  // example of a atributes
-  ImageContent = 'test image';
+  // // example of a atributes
+  // ImageContent = 'test image';
 
-  //example of an event handler
-  btnName = 'Click Me';
-  message = 'Hello, Angular!';
-  onButtonClick(): void {
-    this.message = 'Button was clicked!';
-    this.btnName = 'Clicked!';
-  }
+  // //example of an event handler
+  // btnName = 'Click Me';
+  // message = 'Hello, Angular!';
+  // onButtonClick(): void {
+  //   this.message = 'Button was clicked!';
+  //   this.btnName = 'Clicked!';
+  // }
 
-  updateField(): void {
-    console.log('Field updated!');
-  }
+  // updateField(): void {
+  //   console.log('Field updated!');
+  // }
 
-  // example of a method to 2-way bind a value
-  bindValue = '';
+  // // example of a method to 2-way bind a value
+  // bindValue = '';
 }

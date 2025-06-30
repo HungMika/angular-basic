@@ -1,7 +1,34 @@
 <main class="main">
   <div class="container">
     <header-layout />
-    <div>{{ title.name }}</div>
+    <div class="cart-container">
+      <h1>SHOPPING CART</h1>
+
+      <div class="cart-items">
+        <div class="item-header">
+          <div class="item-img">Image</div>
+          <div class="item-name">Name</div>
+          <div class="item-price">Price</div>
+          <div class="item-action">Action</div>
+        </div>
+        <div class="item-body">
+          <div class="body-rows">
+            <div class="item-img">
+              <img width="100px" height="auto" src="assets/images/nintendoS2.jpg" alt="nintendoS2" />
+            </div>
+            <div class="item-name">Nintendo Switch 2</div>
+            <div class="item-price">$600</div>
+            <div class="btn-delete"><img width="30px" height="30PX" src="assets/images/bin.png" alt="delete" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<router-outlet />
+
+<!-- <div>{{ title.name }}</div>
     <div>{{ title.version + 1 }}</div>
     <div>
       <b>{{ title.description }}</b>
@@ -16,8 +43,4 @@
     <button (click)="onButtonClick()">{{ btnName }}</button>
     <br />
     <input type="text" [(ngModel)]="bindValue" />
-    <div>{{ bindValue }}</div>
-  </div>
-</main>
-
-<router-outlet />
+    <div>{{ bindValue }}</div> -->
