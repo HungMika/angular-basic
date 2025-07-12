@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderLayoutComponent } from './header-layout/header-layout.component';
+import { HeaderLayoutComponent } from './shared/header-layout/header-layout.component';
 import { FormsModule } from '@angular/forms';
+import { CurrencyPipe } from './shared/pipes/CurrencyPipe.pipe';
+import { UppercasePipe } from './shared/pipes/UppercasePipe.pipe';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderLayoutComponent, FormsModule],
+  imports: [RouterOutlet, HeaderLayoutComponent, FormsModule, CurrencyPipe, UppercasePipe, NgFor],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -16,6 +19,39 @@ export class AppComponent {
     version: '1.0.0',
     description: 'A simple Angular application',
   };
+
+  products = [
+    {
+      id: 1,
+      name: 'Nintendo Switch',
+      price: 6000000,
+      image: 'assets/images/nintendoS1.jpg',
+    },
+    {
+      id: 2,
+      name: 'Nintendo Switch 2',
+      price: 30000000,
+      image: 'assets/images/nintendoS2.jpg',
+    },
+    {
+      id: 3,
+      name: 'Nintendo Switch OLED',
+      price: 8000000,
+      image: 'assets/images/nintendoOled.jpg',
+    },
+    {
+      id: 4,
+      name: 'Nintendo Switch Lite',
+      price: 4000000,
+      image: 'assets/images/nintendoSLite.jpg',
+    },
+    {
+      id: 4,
+      name: 'Nintendo 3DS',
+      price: 2000000,
+      image: 'assets/images/nintendo3ds.jpg',
+    },
+  ];
 
   // // example of a boolean flag
   // isDisable = true;

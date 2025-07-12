@@ -12,12 +12,12 @@
           <div class="item-action">Action</div>
         </div>
         <div class="item-body">
-          <div class="body-rows">
+          <div class="body-rows" *ngFor="let prod of products">
             <div class="item-img">
-              <img width="100px" height="auto" src="assets/images/nintendoS2.jpg" alt="nintendoS2" />
+              <img width="100px" height="auto" src="{{ prod.image }}" alt="{{ prod.name }}" />
             </div>
-            <div class="item-name">Nintendo Switch 2</div>
-            <div class="item-price">$600</div>
+            <div class="item-name">{{ prod.name | upperPipe }}</div>
+            <div class="item-price">{{ prod.price | currencyPipe }}</div>
             <div class="btn-delete"><img width="30px" height="30PX" src="assets/images/bin.png" alt="delete" /></div>
           </div>
         </div>
