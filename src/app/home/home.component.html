@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="cart-container">
+    <h1 [ngClass]="{ active: isActive }">SHOPPING CART</h1>
+    <h2 *ngIf="isVisible">CART ITEMS</h2>
+
+    <div class="cart-items">
+      <div class="item-header">
+        <div class="item-img">Image</div>
+        <div class="item-name">Name</div>
+        <div class="item-price">Price</div>
+        <div class="item-action">Action</div>
+      </div>
+      <div class="item-body">
+        <div class="body-rows" *ngFor="let prod of products">
+          <div class="item-img">
+            <img width="100px" height="auto" src="{{ prod.image }}" alt="{{ prod.name }}" />
+          </div>
+          <div class="item-name">{{ prod.name | upperPipe }}</div>
+          <div class="item-price">{{ prod.price | currencyPipe }}</div>
+          <div class="btn-delete"><img width="30px" height="30PX" src="assets/images/bin.png" alt="delete" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div>{{ title.name }}</div>
+    <div>{{ title.version + 1 }}</div>
+    <div>
+      <b>{{ title.description }}</b>
+    </div>
+
+    <br />
+    <button [disabled]="isDisable">Click here</button>
+    <br />
+    <img src="assets/images/home.png" alt="logo {{ ImageContent }}" width="20px" height="20px" />
+    <br />
+    <div>{{ message }}</div>
+    <button (click)="onButtonClick()">{{ btnName }}</button>
+    <br />
+    <input type="text" [(ngModel)]="bindValue" />
+    <div>{{ bindValue }}</div> -->
