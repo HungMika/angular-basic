@@ -3,10 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { CurrencyPipe } from '../shared/pipes/CurrencyPipe.pipe';
 import { UppercasePipe } from '../shared/pipes/UppercasePipe.pipe';
 import { NgClass, NgFor, NgIf } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  imports: [FormsModule, CurrencyPipe, UppercasePipe, NgFor, NgClass, NgIf],
+  selector: 'app-home',
+  imports: [FormsModule, CurrencyPipe, UppercasePipe, NgFor, NgClass, NgIf, RouterOutlet, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

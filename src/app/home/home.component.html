@@ -13,7 +13,9 @@
       <div class="item-body">
         <div class="body-rows" *ngFor="let prod of products">
           <div class="item-img">
-            <img width="100px" height="auto" src="{{ prod.image }}" alt="{{ prod.name }}" />
+            <a [routerLink]="['/detail', prod.id]">
+              <img width="100px" height="auto" src="{{ prod.image }}" alt="{{ prod.name }}" />
+            </a>
           </div>
           <div class="item-name">{{ prod.name | upperPipe }}</div>
           <div class="item-price">{{ prod.price | currencyPipe }}</div>
