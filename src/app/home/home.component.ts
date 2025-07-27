@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CurrencyPipe } from '../shared/pipes/CurrencyPipe.pipe';
-import { UppercasePipe } from '../shared/pipes/UppercasePipe.pipe';
-import { NgClass, NgFor, NgIf } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
+
+import { NgClass, NgIf } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { ProductItem } from '../shared/types/productItem';
+import { ProdItemComponent } from '../shared/product-item/prodItem.component';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CurrencyPipe, UppercasePipe, NgFor, NgClass, NgIf, RouterOutlet, RouterLink],
+  standalone: true,
+  imports: [NgClass, NgIf, ProdItemComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -23,7 +24,7 @@ export class HomeComponent {
 
   isVisible = true;
 
-  products = [
+  products: ProductItem[] = [
     {
       id: 1,
       name: 'Nintendo Switch',
