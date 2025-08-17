@@ -22,7 +22,20 @@ export class HomeComponent {
 
   isActive = true;
 
-  isVisible = true;
+  isVisible = false;
+
+  constructor() {
+    console.log('HomeComponent initialized');
+  }
+
+  ngOnInit(): void {
+    console.log('HomeComponent ngOnInit called');
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then((response) => response.json())
+      .then((json) => {
+        console.log('Fetched posts:', json);
+      });
+  }
 
   products: ProductItem[] = [
     {
@@ -56,6 +69,14 @@ export class HomeComponent {
       image: 'assets/images/nintendo3ds.jpg',
     },
   ];
+
+  handleDelete = (event: number) => {
+    console.log('ID received:', event);
+    const productIndex = this.products.findIndex((item) => item.id === event);
+    if (productIndex !== -1) {
+      this.products.splice(productIndex, 1);
+    }
+  };
 
   // // example of a boolean flag
   // isDisable = true;

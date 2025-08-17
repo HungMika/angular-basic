@@ -3,7 +3,10 @@
     <h1 [ngClass]="{ active: isActive }">SHOPPING CART</h1>
     <h2 *ngIf="isVisible">CART ITEMS</h2>
 
-    <app-prod-item [productProp] = "products"></app-prod-item>
+    <app-prod-item 
+      [productProp] = "products"
+      (dataEvent)="handleDelete($event)"
+    ></app-prod-item>
   </div>
 </div>
 
