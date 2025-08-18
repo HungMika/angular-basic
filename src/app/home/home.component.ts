@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 
 import { NgClass, NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
@@ -12,7 +12,7 @@ import { ProdItemComponent } from '../shared/product-item/prodItem.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, DoCheck {
   //example of a text title object
   title = {
     name: 'Angular Application',
@@ -35,6 +35,10 @@ export class HomeComponent {
       .then((json) => {
         console.log('Fetched posts:', json);
       });
+  }
+
+  ngDoCheck(): void {
+    console.log('HomeComponent ngDoCheck called');
   }
 
   products: ProductItem[] = [
@@ -76,6 +80,8 @@ export class HomeComponent {
     if (productIndex !== -1) {
       this.products.splice(productIndex, 1);
     }
+
+    this.products = this.products.filter((item) => item.id !== event);
   };
 
   // // example of a boolean flag

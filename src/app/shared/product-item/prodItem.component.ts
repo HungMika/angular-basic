@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, output, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CurrencyPipe } from '../pipes/CurrencyPipe.pipe';
 import { UppercasePipe } from '../pipes/UppercasePipe.pipe';
@@ -13,16 +13,21 @@ import { ProductItem } from '../types/productItem';
   templateUrl: './prodItem.component.html',
   styleUrl: './prodItem.component.css',
 })
-export class ProdItemComponent {
+export class ProdItemComponent implements OnChanges {
   //receive product data from parent component
   @Input() productProp: ProductItem[] = [];
 
   get totalPrice(): string {
-    const sum = this.productProp.reduce((total, item)=> {
+    const sum = this.productProp.reduce((total, item) => {
       return total + item.price;
-    }, 0)
+    }, 0);
 
     return `Total: ${sum}`;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes['productProp'].currentValue);
+    console.log(changes['productProp'].previousValue);
   }
 
   //pass product id <number> to parent component
@@ -32,5 +37,5 @@ export class ProdItemComponent {
   handleDelete = (id: number) => {
     console.log('Product:', id);
     this.dataEvent.emit(id);
-  }
+  };
 }
