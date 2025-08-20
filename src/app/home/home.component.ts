@@ -22,7 +22,9 @@ export class HomeComponent implements OnInit, DoCheck {
 
   isActive = true;
 
-  isVisible = false;
+  buttonText = 'Hide';
+
+  isVisible = true;
 
   constructor() {
     console.log('HomeComponent initialized');
@@ -39,6 +41,11 @@ export class HomeComponent implements OnInit, DoCheck {
 
   ngDoCheck(): void {
     console.log('HomeComponent ngDoCheck called');
+  }
+
+  handleChangeVisibility(): void {
+    this.isVisible = !this.isVisible;
+    this.buttonText = this.isVisible ? 'Hide' : 'Show';
   }
 
   products: ProductItem[] = [

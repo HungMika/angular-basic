@@ -2,12 +2,11 @@
   <div class="cart-container">
     <h1 [ngClass]="{ active: isActive }">SHOPPING CART</h1>
     <h2 *ngIf="isVisible">CART ITEMS</h2>
-
-    <app-prod-item 
-      [productProp] = "products"
-      (dataEvent)="handleDelete($event)"
-    ></app-prod-item>
+    <div *ngIf="isVisible">
+      <app-prod-item [productProp]="products" (dataEvent)="handleDelete($event)"></app-prod-item>
+    </div>
   </div>
+  <button (click)="handleChangeVisibility()">{{ buttonText }}</button>
 </div>
 
 <!-- <div>{{ title.name }}</div>
