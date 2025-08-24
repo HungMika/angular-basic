@@ -4,6 +4,8 @@ import { NgClass, NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ProductItem } from '../shared/types/productItem';
 import { ProdItemComponent } from '../shared/product-item/prodItem.component';
+import { HttpClient } from '@angular/common/http';
+import { BlogService } from '../../services/BlogServices';
 
 @Component({
   selector: 'app-home',
@@ -26,8 +28,13 @@ export class HomeComponent implements OnInit, DoCheck {
 
   isVisible = true;
 
-  constructor() {
+  constructor(private blogService: BlogService) {
     console.log('HomeComponent initialized');
+    this.blogService.getBlogs().subscribe(({ data, message }) => {
+      this.products = data.map((item: any) => {
+        return { ...item, name: item.title, price: Number(item.body), image: 'assets/images/nintendoS1.jpg' };
+      });
+    });
   }
 
   ngOnInit(): void {
